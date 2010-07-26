@@ -44,4 +44,3 @@ class ProductsSale extends AppModel {
 		)
 	);
 }
-?>

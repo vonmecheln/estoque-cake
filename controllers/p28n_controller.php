@@ -57,4 +57,3 @@ class P28nController extends Controller {
 		$this->redirect('/'.implode('/', $args));
 	}
 }
-?>

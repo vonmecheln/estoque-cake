@@ -39,16 +39,34 @@
 			</td>
 			<td><?php echo $time->niceShort($sale['Sale']['created']); ?>&nbsp;</td>
 			<td class="actions">
-				<?php echo $this->Html->link(__('View', true), array('action' => 'view', $sale['Sale']['id'])); ?>
-				<?php echo $this->Html->link(__('Edit', true), array('action' => 'edit', $sale['Sale']['id'])); ?>
-				<?php echo $this->Html->link(__('Delete', true), array('action' => 'delete', $sale['Sale']['id']), null, sprintf(__('Tem certeza de que deseja excluir # %s?', true), $sale['Sale']['id'])); ?>
+				<?php
+				echo $this->Html->link(
+				$html->image("icons/page_user.gif", array('alt' => __('View', true))),
+					array('action' => 'view', $sale['Sale']['id']),
+					array('escape' => false)
+				);
+				?>
+				<?php
+				echo $this->Html->link(
+				$html->image("icons/page_edit.gif", array('alt' => __('Edit', true))),
+					array('action' => 'edit', $sale['Sale']['id']),
+					array('escape' => false)
+				);
+				?>
+				<?php
+				echo $this->Html->link(
+					$this->Html->image("icons/page_delete.gif", array('alt' => __('Delete', true))),
+					array('action' => 'delete', $sale['Sale']['id']),
+					array('escape' => false),
+					sprintf(__('Are you sure you want to delete # %s?', true), $sale['Sale']['id']));
+				?>
 			</td>
 		</tr>
 	<?php endforeach; ?>
 		</table>
 
 		<div class="paging">
-			<?php echo $this->Paginator->prev('<< '.__('previous', true), array(), null, array('class'=>'disabled'));?>
+			<?php echo $this->Paginator->prev($this->Html->image("icons/action_back.gif", array('alt' => __('previous', true))), array(), null, array('class'=>'disabled', 'escape' => false));?>
 		 | 	<?php echo $this->Paginator->numbers();?>
 	 |
 			<?php echo $this->Paginator->next(__('next', true).' >>', array(), null, array('class' => 'disabled'));?>

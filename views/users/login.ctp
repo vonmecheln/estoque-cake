@@ -13,7 +13,7 @@
 				echo $this->Form->input('password', array('label' => sprintf(__('Password', true))));
 			?>
 			<br />
-		<?php echo $this->Form->end(__('Login', true));?>
+		<?php echo $this->Form->submit(__('Login', true), array('div' => 'login'));?>
 		</div>
 		
 	</div>

@@ -62,6 +62,14 @@ class UsersController extends AppController {
 	function add() {
 		if (!empty($this->data)) {
 			$this->User->create();
+			if ($this->RequestHandler->isAjax()) {
+				if ($this->User->save($this->data)) {
+					echo 'The user has been saved';
+				}
+				Configure::write('debug', 0);
+				$this->autoRender = true;
+				exit();
+			}
 			if ($this->User->save($this->data)) {
 				$this->Session->setFlash(sprintf(__('The %s has been saved', true), __('user', true)));
 				$this->redirect(array('action' => 'index'));
@@ -160,4 +168,3 @@ class UsersController extends AppController {
 		$this->Acl->allow($group, 'controllers/ProductsSales');
 	}
 }
-?>

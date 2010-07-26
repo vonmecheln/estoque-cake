@@ -70,7 +70,7 @@ msgstr ""
 #: /views/users/index.ctp:26
 #: /views/users/view.ctp:32
 msgid "Group"
-msgstr ""
+msgstr "Grupo"
 
 #: /controllers/groups_controller.php:113
 #: /controllers/products_controller.php:166

@@ -147,4 +147,3 @@ class SalesController extends AppController {
 		$this->redirect(array('action' => 'index'));
 	}
 }
-?>

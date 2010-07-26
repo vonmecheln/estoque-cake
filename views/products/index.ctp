@@ -43,19 +43,37 @@
 			<td><?php echo $product['Product']['price']; ?>&nbsp;</td>
 			<td><?php echo $product['Product']['amount']; ?>&nbsp;</td>
 			<td class="actions">
-				<?php echo $this->Html->link(__('View', true), array('action' => 'view', $product['Product']['id'])); ?>
-				<?php echo $this->Html->link(__('Edit', true), array('action' => 'edit', $product['Product']['id'])); ?>
-				<?php echo $this->Html->link(__('Delete', true), array('action' => 'delete', $product['Product']['id']), null, sprintf(__('Tem certeza de que deseja excluir # %s?', true), $product['Product']['description'])); ?>
+				<?php
+				echo $this->Html->link(
+				$html->image("icons/page_user.gif", array('alt' => __('View', true))),
+					array('action' => 'view', $product['Product']['id']),
+					array('escape' => false)
+				);
+				?>
+				<?php
+				echo $this->Html->link(
+				$html->image("icons/page_edit.gif", array('alt' => __('Edit', true))),
+					array('action' => 'edit', $product['Product']['id']),
+					array('escape' => false)
+				);
+				?>
+				<?php
+				echo $this->Html->link(
+					$this->Html->image("icons/page_delete.gif", array('alt' => __('Delete', true))),
+					array('action' => 'delete', $product['Product']['id']),
+					array('escape' => false),
+					sprintf(__('Are you sure you want to delete # %s?', true), $product['Product']['description']));
+				?>
 			</td>
 		</tr>
 	<?php endforeach; ?>
 		</table>
 
 		<div class="paging">
-			<?php echo $this->Paginator->prev('<< '.__('previous', true), array(), null, array('class'=>'disabled'));?>
-		 | 	<?php echo $this->Paginator->numbers();?>
-	 |
-			<?php echo $this->Paginator->next(__('next', true).' >>', array(), null, array('class' => 'disabled'));?>
+			<?php echo $this->Paginator->prev($this->Html->image("icons/action_back.gif", array('alt' => __('previous', true))), array('escape' => false), null, array('class'=>'disabled', 'escape' => false));?>
+			| <?php echo $this->Paginator->numbers();?>
+			|
+			<?php echo $this->Paginator->next($this->Html->image("icons/action_forward.gif", array('alt' => __('next', true))), array('escape' => false), null, array('class' => 'disabled', 'escape' => false));?>
 		</div>
 		
 	</div>

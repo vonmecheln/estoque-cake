@@ -49,4 +49,9 @@
 		'action' => 'shuntRequest',
 		'lang' => 'pt-br',
 	));
-?>
+/**
+ * Routes for plugin Installer
+ */
+	if (!file_exists(APP.'config'.DS.'settings.yml')) {
+		Router::connect('/', array('plugin' => 'install' ,'controller' => 'install'));
+	}

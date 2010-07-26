@@ -77,4 +77,3 @@ class Group extends AppModel {
 	}
 
 }
-?>

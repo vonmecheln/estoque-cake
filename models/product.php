@@ -127,4 +127,3 @@ class Product extends AppModel {
 	);
 
 }
-?>

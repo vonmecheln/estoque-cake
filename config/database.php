@@ -81,6 +81,7 @@ class DATABASE_CONFIG {
 		'password' => '099605',
 		'database' => 'estoque',
 		'prefix' => '',
+		'encoding' => 'UTF8',
 	);
 
 	public $test = array(

@@ -35,7 +35,7 @@ class ProductsController extends AppController {
  * @access public
  */
 	public $paginate = array(
-		'limit' => 10,
+		'limit' => 1,
 		'order' => array(
 			'Product.id' => 'asc'
 		)
@@ -167,4 +167,3 @@ class ProductsController extends AppController {
 		$this->redirect(array('action' => 'index'));
 	}
 }
-?>

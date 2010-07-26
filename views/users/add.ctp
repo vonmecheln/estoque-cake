@@ -17,6 +17,9 @@
 	echo $this->Session->flash();
 	echo $this->Session->flash('auth');
 	?>
+	<div id="ajax-save-message" class="message">
+	
+	</div>
 	<div class="post">
 	<h1><?php printf(__('Add %s', true), __('User', true)); ?></h1>
 	<?php echo $this->Form->create('User');?>

@@ -30,4 +30,3 @@ class P28nComponent extends Object {
 		}
 	}
 }
-?>

@@ -67,4 +67,3 @@ class Sale extends AppModel {
 		)
 	);
 }
-?>

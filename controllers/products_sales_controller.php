@@ -58,4 +58,3 @@ class ProductsSalesController extends AppController {
 	}
 
 }
-?>

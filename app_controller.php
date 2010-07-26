@@ -26,6 +26,7 @@ class AppController extends Controller {
 		'Session',
 		'DebugKit.Toolbar',
 		'P28n',
+		'RequestHandler',
 	);
 /**
  * Helpers
@@ -39,7 +40,7 @@ class AppController extends Controller {
 		'Time',
 		'Session',
 		'Ajax',
-		'Javascript',
+		'Js' => array('Jquery'),
 	);
 	
 /**
@@ -245,4 +246,3 @@ class AppController extends Controller {
 
 
 }
-?>

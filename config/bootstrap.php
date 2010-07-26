@@ -53,8 +53,17 @@
  * Company configurations
  */
 	Configure::write('Company.name', 'Company');
-/*
+/**
  * i18n configurations
  */
 	define('DEFAULT_LANGUAGE', 'pt-br');
-?>
+/**
+ * Settings
+ */
+    App::import('Vendor', 'Spyc/Spyc');
+    if (file_exists(CONFIGS.'settings.yml')) {
+        $settings = Spyc::YAMLLoad(file_get_contents(CONFIGS.'settings.yml'));
+        foreach ($settings AS $settingKey => $settingValue) {
+            Configure::write($settingKey, $settingValue);
+        }
+    }

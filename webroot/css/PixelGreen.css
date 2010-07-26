@@ -42,12 +42,12 @@ ul, ol {
 
 /* images */
 img {
-	border: 1px solid #DADADA;
-	padding: 5px;
+	border: 0px solid #DADADA;
+	padding: 2px;
 	background: #FAFAFA;
 }
 img.float-right {
-  margin: 5px 0px 5px 15px;  
+  margin: 5px 0px 5px 15px;
 }
 img.float-left {
   margin: 5px 15px 5px 0px;
@@ -120,6 +120,11 @@ tr.row-b {
 }
 
 .altrowAlert td {
+	color: #fff;
+	background: #c73e14;
+}
+
+.altrowAlert img {
 	color: #fff;
 	background: #c73e14;
 }
@@ -436,6 +441,7 @@ div.paging {
 	color: #ccc;
 	margin-top: 1em;
 	clear:both;
+	text-align: center;
 }
 div.paging span.disabled {
 	color: #ddd;
@@ -451,11 +457,11 @@ div.paging span a {
 #content-wrap #content #main div.message {
 	clear: both;
 	color: #fff;
-	font-size: 140%;
+	font-size: 100%;
 	font-weight: bold;
 	margin: 0 0 1em 0;
-	background: #c73e14;
-	padding: 5px;
+	background: #CD5C5C;
+	padding: 2px;
 }
 #content-wrap #content #main div.error-message {
 	clear: both;

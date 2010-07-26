@@ -1,3 +1,10 @@
+<?php
+/*$javascript->codeBlock('
+	jQuery(function($){
+		$("#field").validator("validate");
+	});', array('inline' => false));*/
+?>
+
 <div id="sidebar">
 
 	<div class="sidebox">
@@ -24,12 +31,11 @@
 		<?php
 			echo $this->Form->input('description', array('label' => sprintf(__('Description', true))));
 			echo $this->Form->input('price', array('label' => sprintf(__('Price', true)), 'after' => ' Ex.: 35.00'));
-			echo $this->Form->input('amount', array('label' => sprintf(__('Description', true))));
+			echo $this->Form->input('amount', array('label' => sprintf(__('Amount', true))));
 			echo $this->Form->input('user_id', array('label' => sprintf(__('User', true)), 'value' => $this->Session->read('Auth.User.id'), 'type' => 'hidden'));
 		?>
 		<br />
 		<?php echo $this->Form->end(__('Add', true));?>
 		
 	</div>
-
 </div>

@@ -25,7 +25,7 @@
 				<th><?php echo $this->Paginator->sort(sprintf(__('Username', true)), 'username');?></th>
 				<th><?php echo $this->Paginator->sort(sprintf(__('Group', true)), 'group_id');?></th>
 				<th><?php echo $this->Paginator->sort(sprintf(__('Created', true)), 'created');?></th>
-				<th><?php echo $this->Paginator->sort(sprintf(__('Modified', true)), 'modified');?></th>
+				<!--	<th><?php echo $this->Paginator->sort(sprintf(__('Modified', true)), 'modified');?></th>	-->
 				<th class="actions"><?php __('Actions');?></th>
 		</tr>
 		<?php
@@ -43,17 +43,35 @@
 				<?php echo $this->Html->link($user['Group']['name'], array('controller' => 'groups', 'action' => 'view', $user['Group']['id'])); ?>
 			</td>
 			<td><?php echo $user['User']['created']; ?>&nbsp;</td>
-			<td><?php echo $user['User']['modified']; ?>&nbsp;</td>
+			<!--	<td><?php echo $user['User']['modified']; ?>&nbsp;</td>		-->
 			<td class="actions">
-				<?php echo $this->Html->link(__('View', true), array('action' => 'view', $user['User']['id'])); ?>
-				<?php echo $this->Html->link(__('Edit', true), array('action' => 'edit', $user['User']['id'])); ?>
-				<?php echo $this->Html->link(__('Delete', true), array('action' => 'delete', $user['User']['id']), null, sprintf(__('Are you sure you want to delete # %s?', true), $user['User']['id'])); ?>
+				<?php
+				echo $this->Html->link(
+				$html->image("icons/page_user.gif", array('alt' => __('View', true))),
+					array('action' => 'view', $user['User']['id']),
+					array('escape' => false)
+				);
+				?>
+				<?php
+				echo $this->Html->link(
+				$html->image("icons/page_edit.gif", array('alt' => __('Edit', true))),
+					array('action' => 'edit', $user['User']['id']),
+					array('escape' => false)
+				);
+				?>
+				<?php
+				echo $this->Html->link(
+					$this->Html->image("icons/page_delete.gif", array('alt' => __('Delete', true))),
+					array('action' => 'delete', $user['User']['id']),
+					array('escape' => false),
+					sprintf(__('Are you sure you want to delete # %s?', true), $user['User']['id']));
+				?>
 			</td>
 		</tr>
 	<?php endforeach; ?>
 		</table>
 		<div class="paging">
-			<?php echo $this->Paginator->prev('<< '.__('previous', true), array(), null, array('class'=>'disabled'));?>
+			<?php echo $this->Paginator->prev($this->Html->image("icons/action_back.gif", array('alt' => __('previous', true))), array(), null, array('class'=>'disabled', 'escape' => false));?>
 		 | 	<?php echo $this->Paginator->numbers();?>
 	 |
 			<?php echo $this->Paginator->next(__('next', true).' >>', array(), null, array('class' => 'disabled'));?>
